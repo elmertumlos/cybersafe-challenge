@@ -1,0 +1,10 @@
+# Cloudflare/Wrangler local state
+.wrangler/
+
+# Generated deployment bundle (rebuilt by deploy-cloudflare.ps1)
+cloudflare-upload/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+*.swp

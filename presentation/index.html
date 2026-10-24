@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Offline project presentation for the CyberSafe Challenge.">
+  <title>CyberSafe Challenge — Project Presentation</title>
+  <link rel="stylesheet" href="presentation.css">
+</head>
+<body>
+  <main id="deck" class="deck" aria-live="polite">
+    <section class="slide cover active" data-title="CyberSafe Challenge">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+      <div class="slide-topline">
+        <span class="brand"><span class="shield">✓</span> CyberSafe</span>
+        <span class="slide-kicker">Project presentation</span>
+      </div>
+      <div class="cover-content">
+        <p class="eyebrow">Cybersecurity awareness, made interactive</p>
+        <h1>CyberSafe<br><span>Challenge</span></h1>
+        <p class="lead">A fast, randomized quiz that turns everyday digital risks into practical learning.</p>
+      </div>
+      <div class="cover-footer">
+        <div><span>Developed by</span><strong>TEAM Bu-ok</strong></div>
+        <div><span>Deployment target</span><strong>Your Cloudflare domain</strong></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Project at a glance">
+      <div class="slide-topline"><span class="chapter">01 / Overview</span><span class="slide-kicker">The product</span></div>
+      <div class="split-title">
+        <div>
+          <p class="eyebrow">Project at a glance</p>
+          <h2>Small scope.<br>Complete experience.</h2>
+        </div>
+        <p class="statement">Ten questions per session—selected from a bank of one hundred—to teach safer digital habits in about five minutes.</p>
+      </div>
+      <div class="metric-grid">
+        <article><strong>100</strong><span>verified question prompts</span></article>
+        <article><strong>10</strong><span>random questions per attempt</span></article>
+        <article><strong>4</strong><span>choices for every question</span></article>
+        <article><strong>0</strong><span>accounts or databases required</span></article>
+      </div>
+      <div class="callout"><span>Design goal</span> Make cybersecurity concepts clear, immediate, and easy to retry.</div>
+    </section>
+
+    <section class="slide" data-title="User journey">
+      <div class="slide-topline"><span class="chapter">02 / Experience</span><span class="slide-kicker">Frontend flow</span></div>
+      <p class="eyebrow">The user journey</p>
+      <h2>One clear action at every step.</h2>
+      <div class="journey">
+        <article><span>01</span><div class="journey-icon">▶</div><h3>Start</h3><p>See the challenge format, question-bank size, and saved best score.</p></article>
+        <i aria-hidden="true">→</i>
+        <article><span>02</span><div class="journey-icon">?</div><h3>Answer</h3><p>Select one of four shuffled answers and submit it for checking.</p></article>
+        <i aria-hidden="true">→</i>
+        <article><span>03</span><div class="journey-icon">✓</div><h3>Learn</h3><p>Receive immediate feedback and a short explanation before moving on.</p></article>
+        <i aria-hidden="true">→</i>
+        <article><span>04</span><div class="journey-icon">★</div><h3>Improve</h3><p>Review the final score, retry, and receive a new random question set.</p></article>
+      </div>
+      <div class="mini-note">The interface prevents unanswered submissions and double-scoring.</div>
+    </section>
+
+    <section class="slide" data-title="Frontend architecture">
+      <div class="slide-topline"><span class="chapter">03 / Frontend</span><span class="slide-kicker">Browser layer</span></div>
+      <p class="eyebrow">Frontend architecture</p>
+      <h2>Three native web technologies.<br>No framework overhead.</h2>
+      <div class="three-columns">
+        <article class="tech-card html-card">
+          <div class="tech-label">HTML</div><h3>Structure</h3>
+          <ul><li>Three semantic screens</li><li>Accessible labels and status region</li><li>Buttons and quiz content containers</li></ul>
+          <code>index.html</code>
+        </article>
+        <article class="tech-card css-card">
+          <div class="tech-label">CSS</div><h3>Presentation</h3>
+          <ul><li>Responsive card layout</li><li>Feedback and focus states</li><li>Reduced-motion support</li></ul>
+          <code>styles.css</code>
+        </article>
+        <article class="tech-card js-card">
+          <div class="tech-label">JS</div><h3>Interaction</h3>
+          <ul><li>State and navigation</li><li>Shuffle and scoring logic</li><li>Results and best score</li></ul>
+          <code>app.js</code>
+        </article>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Component map">
+      <div class="slide-topline"><span class="chapter">04 / Components</span><span class="slide-kicker">Complete inventory</span></div>
+      <p class="eyebrow">All project components</p>
+      <h2>Each file has one clear responsibility.</h2>
+      <div class="component-map">
+        <div class="file-tree">
+          <div class="tree-root">CyberSafe Challenge</div>
+          <div class="tree-item"><b>index.html</b><span>Screen structure</span></div>
+          <div class="tree-item"><b>styles.css</b><span>Visual system</span></div>
+          <div class="tree-item"><b>app.js</b><span>Quiz controller</span></div>
+          <div class="tree-item"><b>question-bank.js</b><span>100 questions</span></div>
+          <div class="tree-item"><b>wrangler.jsonc</b><span>Cloudflare config</span></div>
+          <div class="tree-item"><b>deploy-cloudflare.ps1</b><span>Deployment automation</span></div>
+        </div>
+        <div class="screen-stack">
+          <article><span class="screen-dot"></span><div><b>Start screen</b><p>Intro, quiz facts, start action, best score.</p></div></article>
+          <article><span class="screen-dot"></span><div><b>Quiz screen</b><p>Progress, question, answers, feedback, navigation.</p></div></article>
+          <article><span class="screen-dot"></span><div><b>Results screen</b><p>Score, performance message, retry action.</p></div></article>
+          <article><span class="screen-dot"></span><div><b>Browser storage</b><p>One local best-score value—no personal information.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Question data model">
+      <div class="slide-topline"><span class="chapter">05 / Data</span><span class="slide-kicker">Content model</span></div>
+      <p class="eyebrow">Question data model</p>
+      <div class="code-layout">
+        <div>
+          <h2>Content is separate<br>from behavior.</h2>
+          <p class="body-copy">Every question follows the same predictable shape. The bank can grow without rewriting the quiz engine.</p>
+          <div class="tag-row"><span>20 categories</span><span>100 unique prompts</span><span>4 answers each</span></div>
+        </div>
+        <pre class="code-panel"><span class="c-muted">// one question object</span>
+{
+  <span class="c-key">category</span>: <span class="c-string">"Phishing"</span>,
+  <span class="c-key">question</span>: <span class="c-string">"What should you do?"</span>,
+  <span class="c-key">answers</span>: [
+    <span class="c-string">"Verify independently"</span>,
+    <span class="c-string">"Click immediately"</span>,
+    <span class="c-string">"Share a password"</span>,
+    <span class="c-string">"Ignore all alerts"</span>
+  ],
+  <span class="c-key">correct</span>: <span class="c-number">0</span>,
+  <span class="c-key">explanation</span>: <span class="c-string">"Pause and verify..."</span>
+}</pre>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Quiz algorithm">
+      <div class="slide-topline"><span class="chapter">06 / Algorithm</span><span class="slide-kicker">Core logic</span></div>
+      <p class="eyebrow">Quiz algorithm</p>
+      <h2>Random, fair, and repeatable.</h2>
+      <div class="algorithm-flow">
+        <div><span>1</span><b>Clone the bank</b><small>Protect original data</small></div>
+        <i>→</i>
+        <div><span>2</span><b>Fisher–Yates shuffle</b><small>Randomize 100 items</small></div>
+        <i>→</i>
+        <div><span>3</span><b>Select first 10</b><small>No repeats in a session</small></div>
+        <i>→</i>
+        <div><span>4</span><b>Shuffle answers</b><small>Re-map correct index</small></div>
+      </div>
+      <div class="algorithm-bottom">
+        <pre class="code-panel compact-code"><span class="c-key">for</span> (i = length - 1; i &gt; 0; i--) {
+  j = random integer from 0 to i
+  swap(copy[i], copy[j])
+}
+return copy.slice(0, <span class="c-number">10</span>)</pre>
+        <div class="invariant-list">
+          <div><strong>Exactly 10</strong><span>questions per attempt</span></div>
+          <div><strong>No duplicates</strong><span>within an attempt</span></div>
+          <div><strong>Correct mapping</strong><span>survives answer shuffling</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="State and scoring">
+      <div class="slide-topline"><span class="chapter">07 / Algorithm</span><span class="slide-kicker">State machine</span></div>
+      <p class="eyebrow">State and scoring</p>
+      <h2>Four values drive the entire session.</h2>
+      <div class="state-board">
+        <div class="state-values">
+          <article><code>currentIndex</code><span>Which question is visible?</span></article>
+          <article><code>score</code><span>How many answers are correct?</span></article>
+          <article><code>selectedIndex</code><span>Which option did the user choose?</span></article>
+          <article><code>answerChecked</code><span>Is scoring locked for this question?</span></article>
+        </div>
+        <div class="decision-flow">
+          <div>Choose answer</div><i>↓</i><div>Check once</div><i>↓</i>
+          <div class="decision"><span>Correct?</span><b>Yes +1</b><b>No +0</b></div><i>↓</i>
+          <div>Show explanation</div><i>↓</i><div>Next or results</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Backend and hosting">
+      <div class="slide-topline"><span class="chapter">08 / Backend</span><span class="slide-kicker">Hosting layer</span></div>
+      <p class="eyebrow">Backend</p>
+      <h2>Intentionally serverless.<br>There is no application database.</h2>
+      <div class="hosting-diagram">
+        <article><div class="node-icon">⌁</div><b>User browser</b><span>Runs quiz and stores best score locally</span></article>
+        <i>HTTPS</i>
+        <article class="cloud-node"><div class="node-icon">☁</div><b>Cloudflare edge</b><span>Serves and caches four static assets</span></article>
+        <i>Files</i>
+        <article><div class="node-icon">{ }</div><b>Static Worker</b><span>HTML + CSS + JavaScript + question bank</span></article>
+      </div>
+      <div class="backend-grid">
+        <div><span>What Cloudflare does</span><p>Global HTTPS, caching, custom domain, versioned deployments.</p></div>
+        <div><span>What it does not do</span><p>No login, user profiles, API, form processing, or database queries.</p></div>
+        <div><span>Why this fits</span><p>Minimal cost and complexity, fast delivery, strong privacy, easy maintenance.</p></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Privacy and storage">
+      <div class="slide-topline"><span class="chapter">09 / Storage</span><span class="slide-kicker">Privacy by design</span></div>
+      <p class="eyebrow">Privacy and storage</p>
+      <div class="split-title compact-split">
+        <h2>One saved value.<br>Zero personal records.</h2>
+        <p class="statement">The best score stays inside the user’s browser through <code>localStorage</code>.</p>
+      </div>
+      <div class="privacy-comparison">
+        <div class="yes-panel"><h3>Stored locally</h3><strong>cybersafe-best-score</strong><p>A number from 0 to 10 on that device.</p></div>
+        <div class="no-panel"><h3>Never collected</h3><ul><li>Name or email</li><li>Quiz answer history</li><li>Account credentials</li><li>Personal identifiers</li></ul></div>
+      </div>
+      <div class="mini-note">Clearing browser storage removes the saved best score.</div>
+    </section>
+
+    <section class="slide" data-title="How it was built">
+      <div class="slide-topline"><span class="chapter">10 / Build</span><span class="slide-kicker">Implementation process</span></div>
+      <p class="eyebrow">How it was built</p>
+      <h2>From one-hour MVP to production URL.</h2>
+      <div class="build-timeline">
+        <article><span>01</span><b>Scope</b><p>Define a 10-question cybersecurity quiz with no account or database.</p></article>
+        <article><span>02</span><b>Design</b><p>Create three responsive screens and a focused visual identity.</p></article>
+        <article><span>03</span><b>Content</b><p>Expand to 100 validated questions across 20 security categories.</p></article>
+        <article><span>04</span><b>Logic</b><p>Implement random selection, answer shuffling, scoring, and restart.</p></article>
+        <article><span>05</span><b>Review</b><p>Test syntax, scoring paths, uniqueness, mobile layout, and accessibility.</p></article>
+        <article><span>06</span><b>Deploy</b><p>Upload static assets through Wrangler and attach the custom domain.</p></article>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Deployment pipeline">
+      <div class="slide-topline"><span class="chapter">11 / Delivery</span><span class="slide-kicker">Cloudflare pipeline</span></div>
+      <p class="eyebrow">Deployment pipeline</p>
+      <h2>One command rebuilds and publishes.</h2>
+      <div class="pipeline">
+        <div><b>Source</b><span>Project files</span></div><i>→</i>
+        <div><b>PowerShell</b><span>Copy four assets</span></div><i>→</i>
+        <div><b>Wrangler</b><span>Validate + upload</span></div><i>→</i>
+        <div><b>Cloudflare</b><span>Edge deployment</span></div><i>→</i>
+        <div class="live-node"><b>Live</b><span>Custom domain</span></div>
+      </div>
+      <pre class="terminal"><span>PS&gt;</span> .\deploy-cloudflare.ps1 -DryRun
+<span class="ok">✓ 4 assets validated</span>
+
+<span>PS&gt;</span> .\deploy-cloudflare.ps1
+<span class="ok">✓ quiz.example.com deployed</span></pre>
+      <p class="caption">Configuration lives in <code>wrangler.jsonc</code>; no API token is committed to the project.</p>
+    </section>
+
+    <section class="slide" data-title="Testing and quality">
+      <div class="slide-topline"><span class="chapter">12 / Quality</span><span class="slide-kicker">Verification</span></div>
+      <p class="eyebrow">Testing and quality</p>
+      <h2>Verified from content to production.</h2>
+      <div class="test-grid">
+        <article><span class="test-status">PASS</span><h3>Content integrity</h3><p>100 unique prompts, four answers each, valid correct indexes, and explanations.</p></article>
+        <article><span class="test-status">PASS</span><h3>Randomization</h3><p>1,000 sampled draws produced 10 unique questions every time.</p></article>
+        <article><span class="test-status">PASS</span><h3>Quiz behavior</h3><p>Correct, incorrect, mixed, restart, and blocked-submit paths verified.</p></article>
+        <article><span class="test-status">PASS</span><h3>Production</h3><p>Custom domain, TLS, HTML, and question-bank asset return HTTP 200.</p></article>
+      </div>
+      <div class="review-strip"><b>Reviewer feedback identified next-step accessibility improvements</b><span>focus management · native radio behavior · live feedback · contrast</span></div>
+    </section>
+
+    <section class="slide closing" data-title="Closing">
+      <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+      <div class="slide-topline"><span class="brand"><span class="shield">✓</span> CyberSafe</span><span class="slide-kicker">TEAM Bu-ok</span></div>
+      <div class="closing-content">
+        <p class="eyebrow">The result</p>
+        <h2>A complete learning product—<br><span>simple enough to understand,<br>useful enough to deploy.</span></h2>
+        <span class="domain-example">Deploy at quiz.example.com</span>
+      </div>
+      <div class="closing-footer"><span>100 questions</span><span>10 per attempt</span><span>Zero database</span><span>Global delivery</span></div>
+    </section>
+  </main>
+
+  <nav class="controls" aria-label="Presentation controls">
+    <button id="prev" type="button" aria-label="Previous slide">←</button>
+    <button id="overview" type="button" aria-label="Toggle slide overview">▦</button>
+    <div class="counter"><span id="current">1</span><i>/</i><span id="total">14</span></div>
+    <button id="fullscreen" type="button" aria-label="Toggle fullscreen">⛶</button>
+    <button id="next" type="button" aria-label="Next slide">→</button>
+  </nav>
+  <div class="progress" aria-hidden="true"><div id="progress-bar"></div></div>
+  <p class="keyboard-hint">← → navigate · O overview · F fullscreen</p>
+  <script src="presentation.js"></script>
+</body>
+</html>
