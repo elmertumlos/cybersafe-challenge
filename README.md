@@ -52,7 +52,7 @@ Add a comma after the closing `assets` object before inserting the `routes` bloc
 1. In Cloudflare, open **Workers & Pages**.
 2. Select **Create** → **Pages** → **Upload assets**.
 3. Create a project name such as `cybersafe-quiz`.
-4. Upload `index.html`, `styles.css`, `question-bank.js`, and `app.js` together.
+4. Upload `index.html`, `styles.css`, `question-bank.js`, `app.js`, and the favicon files together.
 5. Select **Deploy site**.
 
 ### Git integration

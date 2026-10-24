@@ -12,7 +12,12 @@ $requiredFiles = @(
     'index.html',
     'styles.css',
     'app.js',
-    'question-bank.js'
+    'question-bank.js',
+    'favicon.ico',
+    'favicon-16x16.png',
+    'favicon-32x32.png',
+    'favicon-512.png',
+    'apple-touch-icon.png'
 )
 
 Write-Host 'Preparing CyberSafe Challenge for Cloudflare Workers...'
